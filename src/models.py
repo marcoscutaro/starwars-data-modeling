@@ -35,11 +35,16 @@ class Planets (Base):
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    street_name = Column(String(250))
-    street_number = Column(String(250))
-    post_code = Column(String(250), nullable=False)
-    person_id = Column(Integer, ForeignKey('person.id'))
-    person = relationship(Person)
+    name = Column(String(250))
+    rotation_period = Column(String(250))
+    orbital_period = Column(String(250))
+    diameter = Column(String(250))
+    climate = Column(String(250))
+    gravity = Column(String(250))
+    terrain = Column(String(250))
+    surface_water = Column(String(250))
+    population = Column(String(250))
+    favorite_planet = relationship("Favorite")
 
 
 
