@@ -47,7 +47,14 @@ class Planets (Base):
     favorite_planet = relationship("Favorite")
 
 
-
+class Favorites(Base):
+    __tablename__ = 'favorites'
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('user.id'))
+    character_favorite = Column(Integer,ForeignKey('character.id'))
+    planet_favorite = Column(Integer,ForeignKey('planet.id'))
+    character_relation = relationship ('Character', back_populates = 'favorite_character')
+    planet_relation = relationship ('Planet', back_populates = 'favorite_planet')
 
 
 
