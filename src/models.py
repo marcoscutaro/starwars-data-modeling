@@ -68,11 +68,11 @@ class Favorites(Base):
     __tablename__ = 'favorites'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.id'))
-    character_fav = Column(Integer,ForeignKey('character.id'))
+    character_favorite = Column(Integer,ForeignKey('character.id'))
     character_relation = relationship ('Character', back_populates = 'favorite_character')
-    planet_fav = Column(Integer,ForeignKey('planet.id'))
+    planet_favorite = Column(Integer,ForeignKey('planet.id'))
     planet_relation = relationship ('Planet', back_populates = 'favorite_planet')
-    starships_fav = Column(Integer,ForeignKey('planet.id'))
+    starships_favorite = Column(Integer,ForeignKey('planet.id'))
     starships_relation = relationship ('Starships', back_populates = 'favorite_starships')
 
 
